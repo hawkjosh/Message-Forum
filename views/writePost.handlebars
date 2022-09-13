@@ -1,0 +1,39 @@
+<h1>Create Post</h1>
+
+<form name="WritePostForm" id="postForm">
+    <div class="form-group">
+        <label for="titleInput">Title</label>
+        <input class="form-control" id="titleInput">
+    </div>
+    <div class="form-group">
+        <label for="contentInput">Description</label>
+        <textarea class="w-100 rounded" id="contentInput"></textarea>
+    </div>
+    <div class="dropdown">
+
+        <label for="dropdownMenuButton">Select the category your post belongs to: </label>
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Categories
+        </button>
+        <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Books/Comics</a>
+          <a class="dropdown-item" href="#">Clothing</a>
+          <a class="dropdown-item" href="#">Games</a>
+          <a class="dropdown-item" href="#">Toys/Collectibles</a>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" id="submitButton">Post</button>
+
+      
+
+    </div>
+</form>
+<br>
+<br>
+
+
+
+     {{!-- Our own customized script  --}}
+<script src="/js/handlePost.js"></script>

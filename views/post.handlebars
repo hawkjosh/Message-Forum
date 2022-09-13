@@ -1,0 +1,48 @@
+<div class="container mt-100">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-header">
+          <div class="media flex-wrap w-100 align-items-center"> 
+            <div class="media-body ml-3"> <a class="text-muted" href="javascript:void(0)" data-abc="true">{{post.User.username}}</a>
+              <div class="text-muted small">posted {{timeFrom post.time_posted}} ago</div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="card-body text-dark">
+          <h2>{{post.title}}</h2>
+          <p> {{post.content}} </p>
+        </div>
+      </div>
+    </div>
+    {{!-- All this below is for comments to display. You can modify the styling, but do not modify anything within the brackets --}}
+  <div class="card">
+      <div class="card-header">
+          <h2 class="text-black">Comments</h2>
+          <div class="card-body text-dark">
+              {{#each post.replies}}
+              <h4> {{this.content}} </h4>
+              <p>Posted by {{this.User.username}} {{timeFrom this.time_posted}} ago</p>
+              {{/each}}
+          </div>
+      </div>
+  </div>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-black">Add Comment</h2>
+        <div class="card-body text-dark">
+            <form data-post="{{post.id}}" data-user="{{post.userId}}" id="comment-form">
+                <div>
+                    {{!-- <label for="comment-content">Content: </label> --}}
+                    <textarea name="comment-content" id="comment-content" cols="45" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Reply</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/post.js"></script>

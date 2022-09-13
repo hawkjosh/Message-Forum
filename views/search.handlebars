@@ -1,0 +1,35 @@
+<div>
+
+  <h1 class="mb-5">Search</h1>
+
+  <div class="dropdown mb-2">
+    <label for="searchOption1">Search by category: </label>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="searchOption1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Category</button>
+    <div class="dropdown-menu" id="searchItems1" aria-labelledby="searchOption1">
+      <a class="dropdown-item" href="#">Books/Comics</a>
+      <a class="dropdown-item" href="#">Clothing</a>
+      <a class="dropdown-item" href="#">Games</a>
+      <a class="dropdown-item" href="#">Toys/Collectibles</a>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label for="searchOption2">Search by user: </label>
+    <input type="text" id="searchOption2" name="searchOption2" placeholder="username">
+  </div>
+
+  <div class="form-group mt-4">
+    <button class="btn btn-primary" id="searchBtn">Search</button>
+  </div>
+
+  <section id="search-container"></section>
+<br>
+  {{#each serializedPosts as |post|}}
+    {{>post-details}}
+  {{/each}}
+  
+</div>
+
+<!-- Importing customized script for search.handlebars -->
+<script src="/js/search.js"></script>
+
